@@ -22,10 +22,11 @@ int wmain(int argc, wchar_t* argv[])
 
         DWORD new_width  = std::wcstol(argv[1], NULL, 10),
               new_height = std::wcstol(argv[2], NULL, 10);
-        if (dm.dmPelsWidth == new_width && dm.dmPelsHeight == new_height) {
-            std::wcout << L"The display is already set to " << new_width << L"x" << new_height << L".\n";
-            return 0;
-        }
+        //if (dm.dmPelsWidth == new_width && dm.dmPelsHeight == new_height) {
+        //    std::wcout << L"The display is already set to " << new_width << L"x" << new_height << L".\n";
+        //    return 0;
+        //}
+		std::wcout << L"Display set " << new_width << L"x" << new_height << L".\n";
 
         dm.dmPelsWidth  = new_width;
         dm.dmPelsHeight = new_height;
