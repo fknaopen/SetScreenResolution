@@ -20,8 +20,8 @@ int wmain(int argc, wchar_t* argv[])
         if (EnumDisplaySettings(NULL, ENUM_CURRENT_SETTINGS, &dm) == 0)
             throw std::runtime_error("can't retrieve current display settings");
 
-        DWORD new_width  = boost::lexical_cast<DWORD>(argv[1]),
-              new_height = boost::lexical_cast<DWORD>(argv[2]);
+        DWORD new_width  = std::wcstol(argv[1], NULL, 10),
+              new_height = std::wcstol(argv[2], NULL, 10);
         if (dm.dmPelsWidth == new_width && dm.dmPelsHeight == new_height) {
             std::wcout << L"The display is already set to " << new_width << L"x" << new_height << L".\n";
             return 0;
